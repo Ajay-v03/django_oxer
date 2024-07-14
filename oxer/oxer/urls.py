@@ -20,8 +20,8 @@ from oxer import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index.html', views.home),
-    path('about.html', views.aboutus),
-    path('blog.html', views.blog),
-    path('class.html', views.class_type),
+    path('home/', views.home,name="home"),
+    path('about-us/', views.aboutus,name="aboutus"),
+    path('blog/', views.blog,name="blog"),
+    path('class/', views.class_type,name="class"),
 ]
