@@ -12,3 +12,15 @@ def blog(request):
 
 def class_type(request):
     return render(request,"class.html")
+
+# GET Method example
+def form(request):
+    full_name = ''
+    try:
+        first_name = request.GET['fname']
+        last_name = request.GET['lname']
+        full_name = first_name + ' ' + last_name
+    except:
+        pass
+    print(full_name)
+    return render(request,"form.html",{'output':full_name})
