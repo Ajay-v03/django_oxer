@@ -4,15 +4,16 @@
 
 <h2>HTML Forms</h2>
 
-<form>
+<form method="post">
+    {% csrf_token %}
   <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="Ajay"><br>
+  <input type="text" id="fname" name="fname" value="{{fname}}"><br>
   <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Verma"><br><br>
+  <input type="text" id="lname" name="lname" value="{{lname}}"><br><br>
   <button type="submit">Save</button> <br><br>
   <label for="lname">Output:</label><br>
   <div>
-  <input type="text" value="{{output}}">
+  <input type="text" value="{{fullname}}">
   </div>
 </form> 
 
