@@ -18,6 +18,9 @@ def thanks(request):
         output = request.GET.get('fullname')
     return render(request,"thanks.html",{'fullname':output})
 
+def calculator(request):
+    return render(request,"calculator.html")
+
 # GET/POST Method example
 def form(request):
     data = {}
