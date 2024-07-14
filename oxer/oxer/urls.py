@@ -25,4 +25,5 @@ urlpatterns = [
     path('blog.html', views.blog,name='blog.html'),
     path('class.html', views.class_type,name='class.html'),
     path('form.html', views.form),
+    path('thanks.html', views.thanks),
 ]

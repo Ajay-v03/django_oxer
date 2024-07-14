@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render, redirect
 
 def home(request):
     return render(request,"index.html")
@@ -12,6 +12,11 @@ def blog(request):
 
 def class_type(request):
     return render(request,"class.html")
+
+def thanks(request):
+    if request.method == "GET":
+        output = request.GET.get('fullname')
+    return render(request,"thanks.html",{'fullname':output})
 
 # GET/POST Method example
 def form(request):
@@ -27,6 +32,9 @@ def form(request):
             'lname':last_name,
             'fullname':full_name
         }
+        url = "/thanks.html?fullname={}".format(full_name)
+        return HttpResponseRedirect(url)
+        # return redirect(url)
     except:
         pass
     print(data)
