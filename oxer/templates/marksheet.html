@@ -1,0 +1,31 @@
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <label>English</label>
+                <input type="text" name="subject1" size="16" id="Value"> <br><br>
+                <label>Hindi</label>
+                <input type="text" name="subject2" size="16" id="Value"> <br><br>
+                <label>Physics</label>
+                <input type="text" name="subject3" size="16" id="Value"> <br><br>
+                <label>Chemistry</label>
+                <input type="text" name="subject4" size="16" id="Value"> <br><br>
+                <label>Mathematics</label>
+                <input type="text" name="subject5" size="16" id="Value"> <br><br>
+
+
+                <button type="submit">Marksheet</button><br><br>
+
+                <label>Total</label>
+                <input type="text" value={{total}}>
+                <label>Percentage</label>
+                <input type="text" value={{percentage}}>
+                <label>Division</label>
+                <input type="text" value={{division}}>
+
+                <br>
+            </td>
+        </tr>
+    </table>
+</form>

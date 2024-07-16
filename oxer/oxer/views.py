@@ -31,6 +31,35 @@ def evenOdd(request):
             number = "Noo"
     return render(request,"even_odd.html",{'result':result})
 
+def marksheet(request):
+    result = {}
+    if request.method=='POST':
+        english = eval(request.POST.get('subject1'))
+        hindi = eval(request.POST.get('subject2'))
+        phy = eval(request.POST.get('subject3'))
+        chem = eval(request.POST.get('subject4'))
+        math = eval(request.POST.get('subject5'))
+
+        total = english+hindi+phy+chem+math
+        print(total)
+        percentage = total*100/500
+        print(percentage)
+        if percentage>60:
+            division = "First"
+        elif percentage>48:
+            division = "Second"
+        elif percentage>33:
+            division = "Third"
+        else:
+            division = "Fail"
+
+        result['total'] = total
+        result['percentage'] = percentage
+        result['division'] = division
+        
+        return render(request,"marksheet.html",result)
+    return render(request,"marksheet.html")
+
 # GET/POST Method example
 def form(request):
     data = {}
