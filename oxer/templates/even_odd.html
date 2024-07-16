@@ -1,0 +1,17 @@
+<form name="calc" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <label>Input</label>
+                <input type="text" name="number" size="16" id="Value"> <br><br>
+                <button type="submit">Even | Odd </button><br><br>
+
+                <label>Output</label>
+                <input type="text" value={{result}}>
+
+                <br>
+            </td>
+        </tr>
+    </table>
+</form>

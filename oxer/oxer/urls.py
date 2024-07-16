@@ -27,4 +27,5 @@ urlpatterns = [
     path('form.html', views.form),
     path('thanks.html', views.thanks,name="thanks.html"),
     path('calculator.html', views.calculator,name="calculator.html"),
+    path('even-odd.html', views.evenOdd),
 ]

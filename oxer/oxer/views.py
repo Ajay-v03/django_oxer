@@ -21,6 +21,16 @@ def thanks(request):
 def calculator(request):
     return render(request,"calculator.html")
 
+def evenOdd(request):
+    result = ''
+    if request.method=='POST':
+        number = eval(request.POST.get('number'))
+        if number%2==0:
+            result = "Even"
+        else:
+            number = "Noo"
+    return render(request,"even_odd.html",{'result':result})
+
 # GET/POST Method example
 def form(request):
     data = {}
