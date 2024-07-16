@@ -42,7 +42,7 @@ def marksheet(request):
 
         total = english+hindi+phy+chem+math
         print(total)
-        percentage = total*100/500
+        percentage = int(total*100/500)
         print(percentage)
         if percentage>60:
             division = "First"
