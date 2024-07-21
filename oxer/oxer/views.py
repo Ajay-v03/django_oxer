@@ -34,6 +34,8 @@ def evenOdd(request):
 def marksheet(request):
     result = {}
     if request.method=='POST':
+        if request.POST.get('subject1') == '':
+            return render(request,"error.html",{'erorr':True})
         english = eval(request.POST.get('subject1'))
         hindi = eval(request.POST.get('subject2'))
         phy = eval(request.POST.get('subject3'))

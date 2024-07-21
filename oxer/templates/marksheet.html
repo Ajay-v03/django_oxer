@@ -1,4 +1,7 @@
 <form method="POST">
+    {% if error %}
+    <h1> Please Enter Marks</h1>
+    {% endif %}
     {% csrf_token %}
     <table>
         <tr>
